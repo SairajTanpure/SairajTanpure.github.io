@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sairaj Tanpure | AI/ML Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=VT323&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#050a05;color:#b8f0b8;font-family:'Share Tech Mono',monospace;overflow-x:hidden;cursor:crosshair}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:#050a05}
+::-webkit-scrollbar-thumb{background:#004d14}
+body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.07) 3px,rgba(0,0,0,0.07) 4px);pointer-events:none;z-index:9000}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:14px 48px;background:rgba(5,10,5,0.96);border-bottom:1px solid rgba(0,255,65,0.15);backdrop-filter:blur(8px)}
+.nav-logo{font-family:'Orbitron',sans-serif;font-size:13px;color:#00ff41;letter-spacing:3px;text-shadow:0 0 12px #00ff41}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{font-size:10px;color:rgba(0,204,51,0.55);text-decoration:none;letter-spacing:2px;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:#00ff41}
+.nav-right{font-size:10px;color:rgba(0,204,51,0.4);letter-spacing:1px}
+.blink{animation:blink 1s step-end infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:110px 60px 60px;position:relative;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,255,65,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,65,0.07) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 70% 80% at 50% 50%,black 20%,transparent 100%);animation:gdrift 30s linear infinite}
+@keyframes gdrift{to{background-position:50px 50px}}
+.hero-tag{font-size:11px;color:rgba(0,204,51,0.45);letter-spacing:4px;margin-bottom:20px;animation:fi .5s .2s both}
+.hero-name{font-family:'Orbitron',sans-serif;font-size:clamp(3rem,8vw,6.5rem);font-weight:900;color:#00ff41;line-height:.95;text-shadow:0 0 50px rgba(0,255,65,0.35);margin-bottom:16px;animation:fi .5s .4s both}
+.hero-sub{font-family:'VT323',monospace;font-size:clamp(1.6rem,4vw,2.4rem);color:#b8f0b8;margin-bottom:44px;animation:fi .5s .6s both;min-height:40px}
+.hero-sub .cur{color:#00ff41}
+.hero-term{background:rgba(0,12,0,0.92);border:1px solid rgba(0,255,65,0.18);padding:24px 28px;max-width:600px;margin-bottom:40px;animation:fi .5s .8s both}
+.tl{font-size:13px;line-height:2.1;color:#b8f0b8}
+.tl .p{color:#00ff41}
+.tl .c{color:#fff}
+.tl .o{display:block;color:rgba(0,204,51,0.65);padding-left:18px}
+.hero-btns{display:flex;gap:16px;animation:fi .5s 1s both}
+.btn{display:inline-block;padding:11px 30px;font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border:1px solid #00ff41;color:#00ff41;background:transparent;cursor:crosshair;transition:all .22s;position:relative;overflow:hidden}
+.btn::before{content:'';position:absolute;inset:0;background:#00ff41;transform:translateX(-101%);transition:transform .22s;z-index:-1}
+.btn:hover::before{transform:translateX(0)}
+.btn:hover{color:#000}
+.btn2{border-color:rgba(0,255,65,0.25);color:rgba(0,204,51,0.5)}
+.btn2::before{background:rgba(0,255,65,0.15)}
+.btn2:hover{color:#b8f0b8}
+.scroll-ind{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;font-size:9px;color:rgba(0,204,51,0.3);letter-spacing:2px}
+.scroll-bar{width:1px;height:50px;background:linear-gradient(to bottom,#00ff41,transparent);animation:sdrop 2s ease infinite}
+@keyframes sdrop{0%,100%{opacity:0;transform:scaleY(0);transform-origin:top}60%{opacity:1;transform:scaleY(1)}}
+@keyframes fi{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+/* SECTIONS */
+.wrap{padding:80px 60px;max-width:1140px;margin:0 auto}
+.sh{display:flex;align-items:center;gap:14px;margin-bottom:52px}
+.sn{font-size:10px;color:rgba(0,204,51,0.35);letter-spacing:3px}
+.st{font-family:'Orbitron',sans-serif;font-size:1rem;color:#00ff41;letter-spacing:4px;text-transform:uppercase}
+.sl{flex:1;height:1px;background:rgba(0,255,65,0.15)}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.rev.on{opacity:1;transform:translateY(0)}
+
+/* ABOUT */
+.ag{display:grid;grid-template-columns:1fr 1.5fr;gap:48px;align-items:start}
+.jbox{background:#0a120a;border:1px solid rgba(0,255,65,0.18)}
+.jhead{background:#0f1a0f;padding:10px 18px;border-bottom:1px solid rgba(0,255,65,0.12);display:flex;align-items:center;gap:8px}
+.dot{width:10px;height:10px;border-radius:50%}
+.dr{background:#ff5f56}.dy{background:#ffbd2e}.dg{background:#27c93f}
+.jhead span{font-size:10px;color:#1a3a1a;margin-left:auto}
+.jbody{padding:22px;font-size:13px;line-height:2.1}
+.jk{color:#00ff41}.jv{color:#ffd700}.jn{color:#87ceeb}
+.atxt p{font-size:13.5px;line-height:2;color:#b8f0b8;margin-bottom:18px;opacity:.85;padding-left:14px;border-left:2px solid rgba(0,255,65,0.2)}
+.atxt p::before{content:'> ';color:#00ff41}
+
+/* SKILLS */
+.sg{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:12px}
+.sk{background:#0a120a;border:1px solid rgba(0,255,65,0.15);padding:16px 18px;position:relative;transition:border-color .2s}
+.sk::after{content:'';position:absolute;top:0;left:0;height:2px;width:0;background:#00ff41;transition:width 1.3s ease}
+.sk.on::after{width:var(--w)}
+.sk:hover{border-color:rgba(0,255,65,0.35)}
+.skc{font-size:9px;letter-spacing:2px;color:#004d14;margin-bottom:8px}
+.skn{font-size:11px;color:#00ff41;letter-spacing:1px;margin-bottom:10px}
+.sktr{height:3px;background:rgba(0,77,20,0.4);border-radius:2px}
+.skb{height:3px;background:#00ff41;border-radius:2px;width:0;transition:width 1.3s ease}
+.sk.on .skb{width:var(--w)}
+.skp{font-size:10px;color:rgba(0,204,51,0.45);margin-top:6px}
+
+/* PROJECTS */
+.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+.pc{background:#0a120a;border:1px solid rgba(0,255,65,0.15);padding:28px;position:relative;overflow:hidden;transition:border-color .3s,transform .3s}
+.pc:hover{border-color:rgba(0,255,65,0.4);transform:translateY(-5px)}
+.pc::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% -10%,rgba(0,255,65,0.05),transparent 55%);opacity:0;transition:opacity .3s}
+.pc:hover::before{opacity:1}
+.pcid{font-size:9px;color:#004d14;letter-spacing:3px;margin-bottom:12px}
+.pcn{font-family:'Orbitron',sans-serif;font-size:13px;color:#00ff41;margin-bottom:12px;letter-spacing:1px}
+.pcd{font-size:12px;color:#b8f0b8;opacity:.72;line-height:1.85;margin-bottom:18px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.tag{font-size:10px;padding:2px 10px;border:1px solid rgba(0,77,20,0.8);color:rgba(0,204,51,0.55);letter-spacing:1px}
+.plinks a{font-size:11px;color:rgba(0,204,51,0.5);text-decoration:none;letter-spacing:1px;margin-right:16px;transition:color .2s}
+.plinks a:hover{color:#00ff41}
+.plinks a::before{content:'→ '}
+
+/* EDUCATION */
+.el{padding-left:26px;border-left:1px solid rgba(0,255,65,0.15)}
+.ei{position:relative;margin-bottom:38px}
+.ei::before{content:'';position:absolute;left:-30px;top:6px;width:8px;height:8px;background:#00ff41;box-shadow:0 0 10px #00ff41}
+.eyr{font-size:10px;color:rgba(0,204,51,0.4);letter-spacing:3px;margin-bottom:7px}
+.edg{font-family:'Orbitron',sans-serif;font-size:13px;color:#00ff41;margin-bottom:4px;letter-spacing:1px}
+.esc{font-size:13px;color:#b8f0b8;opacity:.78;margin-bottom:5px}
+.edt{font-size:11px;color:rgba(0,204,51,0.45);letter-spacing:1px}
+
+/* HACKATHONS */
+.hg{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.hc{background:#0a120a;border:1px solid rgba(0,255,65,0.15);padding:26px;transition:border-color .3s,transform .3s}
+.hc:hover{border-color:rgba(0,255,65,0.4);transform:translateY(-4px)}
+.hbadge{display:inline-block;font-size:9px;padding:3px 12px;border:1px solid #004d14;color:#004d14;letter-spacing:2px;margin-bottom:14px;text-transform:uppercase}
+.hbadge.hi{border-color:rgba(0,255,65,0.35);color:#00cc33}
+.hn{font-family:'Orbitron',sans-serif;font-size:13px;color:#00ff41;margin-bottom:8px;letter-spacing:1px}
+.hdate{font-size:10px;color:rgba(0,204,51,0.38);letter-spacing:2px;margin-bottom:12px}
+.hd{font-size:12px;color:#b8f0b8;opacity:.72;line-height:1.85;margin-bottom:14px}
+
+/* CERTS */
+.cw{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:12px;margin-bottom:8px}
+.cc{background:#0a120a;border:1px solid rgba(0,255,65,0.13);padding:16px 18px;display:flex;gap:12px;align-items:flex-start;transition:border-color .2s,transform .2s}
+.cc:hover{border-color:rgba(0,255,65,0.35);transform:translateX(4px)}
+.cico{font-size:16px;min-width:22px;color:#00ff41;margin-top:2px}
+.cn{font-size:12px;color:#b8f0b8;margin-bottom:4px;line-height:1.45}
+.ciss{font-size:10px;color:rgba(0,204,51,0.48);letter-spacing:.5px}
+.cyr{font-size:10px;color:#004d14;margin-top:3px}
+.cgh{font-size:10px;color:rgba(0,204,51,0.35);letter-spacing:3px;text-transform:uppercase;margin:28px 0 12px;padding-bottom:8px;border-bottom:1px solid rgba(0,255,65,0.1)}
+.cgh:first-child{margin-top:0}
+
+/* CONTACT */
+.ctg{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.clink{display:flex;align-items:center;gap:14px;text-decoration:none;padding:15px 20px;border:1px solid rgba(0,255,65,0.15);background:#0a120a;margin-bottom:12px;transition:border-color .2s,transform .2s}
+.clink:hover{border-color:rgba(0,255,65,0.38);transform:translateX(6px)}
+.clico{font-size:18px;color:#00ff41;min-width:24px}
+.cllb{font-size:10px;color:rgba(0,204,51,0.4);letter-spacing:2px;margin-bottom:3px}
+.clv{font-size:12px;color:#b8f0b8}
+.cf{display:flex;flex-direction:column;gap:14px}
+.cf label{font-size:10px;color:rgba(0,204,51,0.45);letter-spacing:2px;display:block;margin-bottom:5px}
+.cf input,.cf textarea{width:100%;background:#0a120a;border:1px solid rgba(0,255,65,0.15);color:#b8f0b8;font-family:'Share Tech Mono',monospace;font-size:13px;padding:12px 16px;outline:none;transition:border-color .2s;resize:none}
+.cf input:focus,.cf textarea:focus{border-color:rgba(0,255,65,0.35)}
+.cf input::placeholder,.cf textarea::placeholder{color:#0d2a0d}
+footer{text-align:center;padding:30px;border-top:1px solid rgba(0,255,65,0.12);font-size:10px;color:#004d14;letter-spacing:2px}
+.corner{position:fixed;font-size:9px;color:#0a2a0a;letter-spacing:1px;line-height:2;z-index:500;pointer-events:none}
+.ctl{top:62px;left:12px}
+.cbr{bottom:12px;right:12px;text-align:right}
+
+@media(max-width:780px){
+  nav{padding:12px 20px}
+  .nav-links,.corner{display:none}
+  .hero{padding:100px 22px 60px}
+  .wrap{padding:56px 22px}
+  .ag,.ctg{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="corner ctl">SYS://PORTFOLIO_v3.0<br>STATUS: ONLINE<br>UPTIME: <span id="upt">00:00:00</span></div>
+<div class="corner cbr">19.8762° N · 75.3433° E<br>MAHARASHTRA · INDIA</div>
+
+<nav>
+  <div class="nav-logo">ST://</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#hackathons">Hackathons</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">● ONLINE<span class="blink">_</span></div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-tag">// INITIALIZING PROFILE . . .</div>
+  <h1 class="hero-name">SAIRAJ<br>TANPURE</h1>
+  <div class="hero-sub"><span id="typed"></span><span class="cur blink">█</span></div>
+  <div class="hero-term">
+    <div class="tl"><span class="p">$</span> <span class="c">whoami</span></div>
+    <span class="tl o">→ B.Tech AI/ML · 2nd Year · Sanjivani University, MH</span>
+    <div class="tl"><span class="p">$</span> <span class="c">ls skills/</span></div>
+    <span class="tl o">→ Python · TensorFlow · OpenCV · MongoDB · GenAI · LLMs</span>
+    <div class="tl"><span class="p">$</span> <span class="c">cat achievements.log</span></div>
+    <span class="tl o">→ 27 Certs · 2 Hackathons · DIPEX State Level · SIH 2025<span class="blink">█</span></span>
+  </div>
+  <div class="hero-btns">
+    <a href="#projects" class="btn">View Projects</a>
+    <a href="#contact" class="btn btn2">Get In Touch</a>
+  </div>
+  <div class="scroll-ind"><div class="scroll-bar"></div>SCROLL</div>
+</div>
+
+<!-- ABOUT -->
+<section class="wrap" id="about">
+  <div class="sh rev"><span class="sn">01</span><span class="st">About</span><div class="sl"></div></div>
+  <div class="ag">
+    <div class="jbox rev">
+      <div class="jhead"><span class="dot dr"></span><span class="dot dy"></span><span class="dot dg"></span><span>profile.json</span></div>
+      <div class="jbody">
+        <div>{</div>
+        <div>&nbsp;&nbsp;<span class="jk">"name"</span>: <span class="jv">"Sairaj Tanpure"</span>,</div>
+        <div>&nbsp;&nbsp;<span class="jk">"degree"</span>: <span class="jv">"B.Tech AI/ML"</span>,</div>
+        <div>&nbsp;&nbsp;<span class="jk">"year"</span>: <span class="jn">2</span>,</div>
+        <div>&nbsp;&nbsp;<span class="jk">"university"</span>: <span class="jv">"Sanjivani University"</span>,</div>
+        <div>&nbsp;&nbsp;<span class="jk">"location"</span>: <span class="jv">"Maharashtra, India"</span>,</div>
+        <div>&nbsp;&nbsp;<span class="jk">"certifications"</span>: <span class="jn">27</span>,</div>
+        <div>&nbsp;&nbsp;<span class="jk">"hackathons"</span>: <span class="jn">2</span>,</div>
+        <div>&nbsp;&nbsp;<span class="jk">"focus"</span>: [<span class="jv">"CV"</span>, <span class="jv">"DL"</span>, <span class="jv">"GenAI"</span>],</div>
+        <div>&nbsp;&nbsp;<span class="jk">"status"</span>: <span class="jv">"open_to_internships"</span></div>
+        <div>}</div>
+      </div>
+    </div>
+    <div class="atxt rev">
+      <p>I'm a 2nd-year B.Tech student in AI/ML at Sanjivani University, Maharashtra — passionate about building intelligent systems that can see, understand, and reason about the world.</p>
+      <p>My work spans Computer Vision, Deep Learning, and Generative AI. I've built real-time facial expression recognition systems and explored RAG architectures, LLM prompt engineering, and agentic AI pipelines.</p>
+      <p>I've competed in international hackathons (SUNHACKS-2K25), the Smart India Hackathon 2025 with Team Mind Mates, and represented Sanjivani at the DIPEX 2025 state-level exhibition.</p>
+      <p>Currently seeking internship opportunities to contribute to real-world AI systems and grow with a high-calibre team.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="wrap" id="skills">
+  <div class="sh rev"><span class="sn">02</span><span class="st">Skills</span><div class="sl"></div></div>
+  <div class="sg">
+    <div class="sk rev" style="--w:88%"><div class="skc">LANGUAGE</div><div class="skn">Python</div><div class="sktr"><div class="skb"></div></div><div class="skp">88%</div></div>
+    <div class="sk rev" style="--w:65%"><div class="skc">LANGUAGE</div><div class="skn">C / C++</div><div class="sktr"><div class="skb"></div></div><div class="skp">65%</div></div>
+    <div class="sk rev" style="--w:80%"><div class="skc">FRAMEWORK</div><div class="skn">TensorFlow</div><div class="sktr"><div class="skb"></div></div><div class="skp">80%</div></div>
+    <div class="sk rev" style="--w:75%"><div class="skc">FRAMEWORK</div><div class="skn">PyTorch</div><div class="sktr"><div class="skb"></div></div><div class="skp">75%</div></div>
+    <div class="sk rev" style="--w:80%"><div class="skc">LIBRARY</div><div class="skn">Scikit-Learn</div><div class="sktr"><div class="skb"></div></div><div class="skp">80%</div></div>
+    <div class="sk rev" style="--w:78%"><div class="skc">COMPUTER VISION</div><div class="skn">OpenCV</div><div class="sktr"><div class="skb"></div></div><div class="skp">78%</div></div>
+    <div class="sk rev" style="--w:72%"><div class="skc">DATA</div><div class="skn">Pandas / NumPy</div><div class="sktr"><div class="skb"></div></div><div class="skp">72%</div></div>
+    <div class="sk rev" style="--w:70%"><div class="skc">DATABASE</div><div class="skn">MongoDB</div><div class="sktr"><div class="skb"></div></div><div class="skp">70%</div></div>
+    <div class="sk rev" style="--w:70%"><div class="skc">GENERATIVE AI</div><div class="skn">LLMs / RAG</div><div class="sktr"><div class="skb"></div></div><div class="skp">70%</div></div>
+    <div class="sk rev" style="--w:65%"><div class="skc">CLOUD / DEVOPS</div><div class="skn">DevOps + Agentic AI</div><div class="sktr"><div class="skb"></div></div><div class="skp">65%</div></div>
+    <div class="sk rev" style="--w:68%"><div class="skc">AUTOMATION</div><div class="skn">N8N / UiPath</div><div class="sktr"><div class="skb"></div></div><div class="skp">68%</div></div>
+    <div class="sk rev" style="--w:62%"><div class="skc">TOOLS</div><div class="skn">Git / GitHub</div><div class="sktr"><div class="skb"></div></div><div class="skp">62%</div></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="wrap" id="projects">
+  <div class="sh rev"><span class="sn">03</span><span class="st">Projects</span><div class="sl"></div></div>
+  <div class="pg">
+    <div class="pc rev">
+      <div class="pcid">// PROJECT_001 · COMPUTER VISION · DEEP LEARNING</div>
+      <div class="pcn">Facial Expression Recognition</div>
+      <div class="pcd">Real-time CNN-based system that detects and classifies 7 human facial expressions — happy, sad, angry, surprised, neutral, fear, disgust — from a live webcam feed using deep learning and computer vision pipelines.</div>
+      <div class="tags">
+        <span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">OpenCV</span><span class="tag">CNN</span><span class="tag">Deep Learning</span><span class="tag">Real-time</span>
+      </div>
+      <div class="plinks"><a href="https://github.com/SairajTanpure/facial-expression" target="_blank">GitHub Repo</a></div>
+    </div>
+    <div class="pc rev" style="border-style:dashed;opacity:.4">
+      <div class="pcid">// PROJECT_002 · IN DEVELOPMENT</div>
+      <div class="pcn">[ Next Project ]</div>
+      <div class="pcd">More projects coming soon. Stay tuned.</div>
+      <div class="tags"><span class="tag">Coming Soon</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="wrap" id="education">
+  <div class="sh rev"><span class="sn">04</span><span class="st">Education</span><div class="sl"></div></div>
+  <div class="el rev">
+    <div class="ei">
+      <div class="eyr">2023 — 2027 (ONGOING)</div>
+      <div class="edg">B.Tech — Artificial Intelligence &amp; Machine Learning</div>
+      <div class="esc">Sanjivani University, Maharashtra</div>
+      <div class="edt">2nd Year · AI / ML Specialisation</div>
+    </div>
+    <div class="ei">
+      <div class="eyr">COMPLETED</div>
+      <div class="edg">Higher Secondary Certificate (HSC)</div>
+      <div class="esc">Maharashtra State Board</div>
+      <div class="edt">Science Stream</div>
+    </div>
+  </div>
+</section>
+
+<!-- HACKATHONS -->
+<section class="wrap" id="hackathons">
+  <div class="sh rev"><span class="sn">05</span><span class="st">Hackathons &amp; Events</span><div class="sl"></div></div>
+  <div class="hg">
+
+    <div class="hc rev">
+      <div class="hbadge hi">International Level</div>
+      <div class="hn">SUNHACKS-2K25</div>
+      <div class="hdate">21 – 23 AUGUST 2025</div>
+      <div class="hd">International Level Hackathon organized by School of Computer Sciences &amp; Engineering, Sandip University, Nashik. Sponsored by ESDS Software Solutions. Competed among top student teams in a 3-day intensive build and pitch format.</div>
+      <div class="tags">
+        <span class="tag">International</span><span class="tag">Sandip University</span><span class="tag">Nashik</span><span class="tag">ESDS Sponsored</span>
+      </div>
+    </div>
+
+    <div class="hc rev">
+      <div class="hbadge hi">National · SIH 2025</div>
+      <div class="hn">Smart India Hackathon 2025</div>
+      <div class="hdate">13 – 14 SEPTEMBER 2025</div>
+      <div class="hd">Represented Sanjivani University in the Internal SIH Round as part of Team "Mind Mates". Built an AI-powered emotion detection system using Python, TensorFlow, OpenCV, HuggingFace, and Flask — presented live to a panel of judges.</div>
+      <div class="tags">
+        <span class="tag">Team Mind Mates</span><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">OpenCV</span><span class="tag">HuggingFace</span><span class="tag">Flask</span>
+      </div>
+    </div>
+
+    <div class="hc rev">
+      <div class="hbadge">State Level</div>
+      <div class="hn">DIPEX 2025 — Idea Presentation</div>
+      <div class="hdate">16 MARCH 2025</div>
+      <div class="hd">Participated in the Idea Presentation Round of DIPEX 2025 — a State Level Exhibition of Working Models — representing Sanjivani University at the Ahilyanagar &amp; Nashik District round, organised by the Association of Ahmedabad Manufacturing Industries.</div>
+      <div class="tags">
+        <span class="tag">State Level</span><span class="tag">Ahilyanagar &amp; Nashik</span><span class="tag">Idea Presentation</span>
+      </div>
+    </div>
+
+    <div class="hc rev">
+      <div class="hbadge">University Programme</div>
+      <div class="hn">Engineering Induction 2024</div>
+      <div class="hdate">23 – 27 JULY 2024</div>
+      <div class="hd">Completed the 30-hour Engineering Induction Programme conducted by Sanjivani University — a foundational programme covering technical, professional, and engineering competencies for incoming B.Tech students.</div>
+      <div class="tags">
+        <span class="tag">Sanjivani University</span><span class="tag">30 Hours</span><span class="tag">Foundation</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="wrap" id="certifications">
+  <div class="sh rev"><span class="sn">06</span><span class="st">Certifications</span><div class="sl"></div></div>
+  <div class="rev">
+
+    <div class="cgh">// IBM</div>
+    <div class="cw">
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">Introduction to Python</div><div class="ciss">IBM Career Education Program</div><div class="cyr">2025</div></div></div>
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">Data Visualisation</div><div class="ciss">IBM Career Education Program</div><div class="cyr">Dec 2025</div></div></div>
+    </div>
+
+    <div class="cgh">// Intel &amp; Government of India</div>
+    <div class="cw">
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">AI For All — AI Aware 2025</div><div class="ciss">Intel × Digital India × CBSE</div><div class="cyr">Dec 2025</div></div></div>
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">Yuva AI for All</div><div class="ciss">INDIAi × FutureSkills Prime / Nasscom</div><div class="cyr">Dec 2025</div></div></div>
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">Generative AI Fluency</div><div class="ciss">FutureSkills Prime / Nasscom · IT-ITeS SSC</div><div class="cyr">Dec 2025</div></div></div>
+    </div>
+
+    <div class="cgh">// Cloud &amp; DevOps</div>
+    <div class="cw">
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">Generative AI with AWS</div><div class="ciss">Amazon Web Services</div><div class="cyr">Dec 2025</div></div></div>
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">Top 10 DevOps Tools with Agentic AI</div><div class="ciss">Cloud DevOps Hub</div><div class="cyr">Dec 2025</div></div></div>
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">Automation using N8N &amp; UiPath</div><div class="ciss">Boraste Technologies × Sanjivani University</div><div class="cyr">Jan 2026</div></div></div>
+    </div>
+
+    <div class="cgh">// Data Science &amp; Generative AI</div>
+    <div class="cw">
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">Data Science for Beginners</div><div class="ciss">Board Infinity</div><div class="cyr">Dec 2025</div></div></div>
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">Getting Started with Large Language Models</div><div class="ciss">Online Course</div><div class="cyr">Dec 2025</div></div></div>
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">Building LLM Apps using Prompt Engineering</div><div class="ciss">Online Course</div><div class="cyr">Dec 2025</div></div></div>
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">Building First RAG System — LlamaIndex</div><div class="ciss">Online Course</div><div class="cyr">Dec 2025</div></div></div>
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">GenAI for Everyone</div><div class="ciss">Online Course</div><div class="cyr">Dec 2025</div></div></div>
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">Generative AI — A Way of Life</div><div class="ciss">Online Course</div><div class="cyr">Dec 2025</div></div></div>
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">Build Product 10x Faster with GenAI</div><div class="ciss">Online Course</div><div class="cyr">Dec 2025</div></div></div>
+    </div>
+
+    <div class="cgh">// MongoDB University — 12 Modules</div>
+    <div class="cw">
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">Introduction to MongoDB (For Students)</div><div class="ciss">MongoDB University</div><div class="cyr">Jun 2025</div></div></div>
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">MongoDB and the Document Model</div><div class="ciss">MongoDB University</div><div class="cyr">Jun 2025</div></div></div>
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">Getting Started with MongoDB Atlas</div><div class="ciss">MongoDB University</div><div class="cyr">Jun 2025</div></div></div>
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">Connecting to a MongoDB Database</div><div class="ciss">MongoDB University</div><div class="cyr">Jun 2025</div></div></div>
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">MongoDB CRUD: Insert &amp; Find Documents</div><div class="ciss">MongoDB University</div><div class="cyr">Jun 2025</div></div></div>
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">MongoDB CRUD: Replace &amp; Delete Documents</div><div class="ciss">MongoDB University</div><div class="cyr">Jun 2025</div></div></div>
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">MongoDB CRUD: Modifying Query Results</div><div class="ciss">MongoDB University</div><div class="cyr">Jun 2025</div></div></div>
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">MongoDB Aggregation</div><div class="ciss">MongoDB University</div><div class="cyr">Jun 2025</div></div></div>
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">MongoDB Indexes</div><div class="ciss">MongoDB University</div><div class="cyr">Jun 2025</div></div></div>
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">MongoDB Atlas Search</div><div class="ciss">MongoDB University</div><div class="cyr">Jun 2025</div></div></div>
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">MongoDB Data Modeling Intro</div><div class="ciss">MongoDB University</div><div class="cyr">Jun 2025</div></div></div>
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">MongoDB Transactions</div><div class="ciss">MongoDB University</div><div class="cyr">Jun 2025</div></div></div>
+    </div>
+
+    <div class="cgh">// Hackathons &amp; Events</div>
+    <div class="cw">
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">SUNHACKS-2K25 — International Hackathon</div><div class="ciss">Sandip University, Nashik</div><div class="cyr">Aug 2025</div></div></div>
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">Smart India Hackathon 2025 — Internal Round</div><div class="ciss">Sanjivani University · Team Mind Mates</div><div class="cyr">Sep 2025</div></div></div>
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">DIPEX 2025 — Idea Presentation Round</div><div class="ciss">Ahilyanagar &amp; Nashik District · State Level</div><div class="cyr">Mar 2025</div></div></div>
+      <div class="cc"><div class="cico">⬡</div><div><div class="cn">Engineering Induction Programme 2024</div><div class="ciss">Sanjivani University · 30 Hours</div><div class="cyr">Jul 2024</div></div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="wrap" id="contact">
+  <div class="sh rev"><span class="sn">07</span><span class="st">Contact</span><div class="sl"></div></div>
+  <div class="ctg">
+    <div class="rev">
+      <a class="clink" href="https://github.com/SairajTanpure" target="_blank">
+        <div class="clico">⌥</div>
+        <div><div class="cllb">GITHUB</div><div class="clv">github.com/SairajTanpure</div></div>
+      </a>
+      <a class="clink" href="https://www.linkedin.com/in/sairaj-tanpure-58a304334" target="_blank">
+        <div class="clico">⌘</div>
+        <div><div class="cllb">LINKEDIN</div><div class="clv">linkedin.com/in/sairaj-tanpure</div></div>
+      </a>
+      <a class="clink" href="mailto:sairajtanpure33@gmail.com">
+        <div class="clico">@</div>
+        <div><div class="cllb">EMAIL</div><div class="clv">sairajtanpure33@gmail.com</div></div>
+      </a>
+    </div>
+    <div class="cf rev">
+      <div><label>// NAME</label><input type="text" placeholder="Your name"/></div>
+      <div><label>// EMAIL</label><input type="email" placeholder="your@email.com"/></div>
+      <div><label>// MESSAGE</label><textarea rows="5" placeholder="Let's build something together..."></textarea></div>
+      <a href="mailto:sairajtanpure33@gmail.com" class="btn" style="text-align:center;display:block">TRANSMIT MESSAGE</a>
+    </div>
+  </div>
+</section>
+
+<footer>SAIRAJ_TANPURE · AI/ML ENGINEER · SANJIVANI UNIVERSITY · 2025</footer>
+
+<script>
+// Typewriter
+const phrases=['AI/ML Engineer in Training_','Computer Vision Developer_','Deep Learning Enthusiast_','Generative AI Explorer_','Building Intelligent Systems_'];
+let pi=0,ci=0,del=false;
+const tel=document.getElementById('typed');
+function type(){
+  if(!tel)return;
+  const cur=phrases[pi];
+  if(!del){tel.textContent=cur.substring(0,ci++);if(ci>cur.length){del=true;setTimeout(type,1800);return;}}
+  else{tel.textContent=cur.substring(0,ci--);if(ci<0){del=false;pi=(pi+1)%phrases.length;ci=0;}}
+  setTimeout(type,del?38:78);
+}
+type();
+
+// Uptime
+const st=Date.now();
+setInterval(()=>{
+  const s=Math.floor((Date.now()-st)/1000);
+  const el=document.getElementById('upt');
+  if(el)el.textContent=String(Math.floor(s/3600)).padStart(2,'0')+':'+String(Math.floor((s%3600)/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');
+},1000);
+
+// Scroll reveal + skill bars
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('on');
+      e.target.querySelectorAll('.skb').forEach(b=>{
+        const w=b.closest('.sk').style.getPropertyValue('--w');
+        if(w)b.style.width=w;
+      });
+    }
+  });
+},{threshold:0.1});
+document.querySelectorAll('.rev,.sk').forEach(el=>obs.observe(el));
+
+// Glitch hover
+const nm=document.querySelector('.hero-name');
+if(nm){
+  nm.addEventListener('mouseenter',()=>{
+    nm.style.textShadow='3px 0 #ff003c,-3px 0 #00fff9,0 0 50px rgba(0,255,65,0.5)';
+    setTimeout(()=>{nm.style.textShadow='0 0 50px rgba(0,255,65,0.35)';},160);
+  });
+}
+</script>
+</body>
+</html>
